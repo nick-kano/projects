@@ -1,16 +1,21 @@
 package game;
 
 public class ColumnTile extends SideTile{
-	public ColumnTile(int column, Board b){
+	/**
+	 * Class constructor.
+	 * @param board the board from where we will count the crabs and shells
+	 * @param column the column that we will count the crabs and shells
+	 */
+	public ColumnTile(int column, Board board){
 		int crabs=0;
 		int shells=0;
-		Tile t;
-		for(int i=0; i<b.getSize(); i++){
-			t=b.getTile(column,i);
-			if(t.getValue()==-1)
+		Tile tile;
+		for(int i=0; i<board.getSize(); i++){
+			tile=board.getTile(column,i);
+			if(tile.getValue()==-1)
 				crabs++;
 			else
-				shells+=t.getValue();
+				shells+=tile.getValue();
 		}
 		this.crabs=crabs;
 		this.shells=shells;

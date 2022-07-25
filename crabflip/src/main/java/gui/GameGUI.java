@@ -5,15 +5,27 @@ import game.*;
 import java.util.LinkedList;
 import java.util.Iterator;
 
+/**
+ * Class that manages the visuals of the games
+ */
 public class GameGUI extends PApplet{
+	/* size of the 'blocks' for the game*/
 	private int PIXEL_SIZE=50;
+	/* the crab sprite */
 	private PImage crab;
+	/* the zero shells sprite */
 	private PImage zero;
+	/* the one shell sprite*/
 	private PImage one;
+	/* the two shells sprite*/
 	private PImage two;
+	/* the board of the game */
 	private Board board=Board.getInstance();
+	/* the hint tile of the row tiles*/
 	private LinkedList<RowTile> rowTiles;
+	/* the hint tile of the column tiles*/
 	private LinkedList<ColumnTile> columnTiles;
+	/* the number of shell tiles in the board */
 	private int target; 
 	
 	public static void main(String[] args){

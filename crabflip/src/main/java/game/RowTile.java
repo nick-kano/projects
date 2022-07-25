@@ -1,18 +1,23 @@
 package game;
 /**
- * 
+ * class that manages the row tiles.
  */
 public class RowTile extends SideTile{
-	public RowTile(int row, Board b){
+	/**
+	 * class constructor.
+	 * @param board the board from where we will count the crabs and shells
+	 * @param row the row that we will count the crabs and shells
+	 */
+	public RowTile(int row, Board board){
 		int crabs=0;
 		int shells=0;
-		Tile t;
-		for(int i=0; i<b.getSize(); i++){
-			t=b.getTile(i,row);
-			if(t.getValue()==-1)
+		Tile tile;
+		for(int i=0; i<board.getSize(); i++){
+			tile=board.getTile(i,row);
+			if(tile.getValue()==-1)
 				crabs++;
 			else
-				shells+=t.getValue();
+				shells+=tile.getValue();
 		}
 		this.crabs=crabs;
 		this.shells=shells;
